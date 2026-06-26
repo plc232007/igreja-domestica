@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Igreja Doméstica — material para os pais</title>
+<meta name="description" content="Material de aprofundamento para os pais da catequese sobre a igreja doméstica, a família como primeira escola da fé e a centralidade da Santa Missa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#FBF7EF;      /* fundo: gesso à luz de vela */
+    --parchment-2:#F4ECDD;    /* fundo alternado */
+    --ink:#241C16;            /* tinta quase-preta, quente */
+    --ink-soft:#5A4E43;       /* texto secundário */
+    --wine:#6E1F2A;           /* vinho do cálice (primária) */
+    --wine-deep:#561522;
+    --gold:#B6892F;           /* douramento / luz de vela */
+    --gold-soft:#D8B873;
+    --vigil:#22425C;          /* azul de vigília / mariano */
+    --line:rgba(36,28,22,.14);
+    --shadow:0 1px 2px rgba(36,28,22,.05), 0 8px 28px rgba(36,28,22,.07);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--parchment);color:var(--ink);
+    font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,.display{font-family:"Fraunces","Spectral",serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  a{color:var(--wine);text-decoration-color:var(--gold-soft);text-underline-offset:3px}
+  a:hover{color:var(--wine-deep)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:"Spectral",serif;font-size:.78rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--wine);
+  }
+  :focus-visible{outline:2.5px solid var(--vigil);outline-offset:3px;border-radius:3px}
+
+  /* ---------- HERO ---------- */
+  header.hero{position:relative;overflow:hidden;background:
+     radial-gradient(120% 90% at 50% -10%, #fff 0%, var(--parchment) 55%, var(--parchment-2) 100%);
+     border-bottom:1px solid var(--line)}
+  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:64px 24px 30px;
+     display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(2.7rem,6.4vw,5rem);margin:.35em 0 .25em;color:var(--ink)}
+  .hero h1 .em{color:var(--wine);font-style:italic;font-weight:500}
+  .hero .sub{font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--vigil);font-weight:500;margin:0 0 18px;max-width:30ch}
+  .hero .lead{color:var(--ink-soft);max-width:46ch;margin:0 0 26px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;font-family:"Spectral",serif;font-weight:600;font-size:1rem;
+     padding:13px 22px;border-radius:999px;text-decoration:none;transition:.2s}
+  .btn-primary{background:var(--wine);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{background:var(--wine-deep);color:#fff;transform:translateY(-1px)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--ink)}
+  .hero-art{justify-self:center;width:100%;max-width:380px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:74px 0}
+  .band{background:var(--parchment-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:62ch}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:.25em 0 .35em}
+  .sec-head p{color:var(--ink-soft);font-size:1.08rem;margin:0}
+  .rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,transparent 60%);
+     border:0;margin:18px 0 0;max-width:120px}
+
+  /* intro + quote */
+  .intro-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:start;margin-top:8px}
+  .intro-grid p{margin:0 0 16px}
+  blockquote.pull{margin:0;padding:26px 26px 26px 30px;background:#fff;border-radius:14px;
+     box-shadow:var(--shadow);position:relative;border-left:4px solid var(--gold)}
+  blockquote.pull .q{font-family:"Fraunces",serif;font-size:1.4rem;line-height:1.3;color:var(--ink);font-weight:500}
+  blockquote.pull cite{display:block;margin-top:14px;font-style:normal;font-size:.86rem;
+     letter-spacing:.04em;color:var(--wine);font-weight:600}
+
+  /* ---------- NAVE (signature) ---------- */
+  .nave{position:relative}
+  .nave-track{position:relative;margin-top:36px;padding-left:0}
+  .step{position:relative;display:grid;grid-template-columns:96px 1fr;gap:24px;
+     padding:26px 0;align-items:start}
+  .step + .step{border-top:1px dashed var(--line)}
+  .step .node{position:relative;display:flex;flex-direction:column;align-items:center}
+  .step .glyph{width:74px;height:74px;border-radius:50%;background:#fff;border:1.5px solid var(--line);
+     display:grid;place-items:center;box-shadow:var(--shadow);color:var(--wine)}
+  .step .num{margin-top:10px;font-family:"Fraunces",serif;font-size:.8rem;color:var(--gold);
+     font-weight:600;letter-spacing:.18em}
+  .step h3{font-size:1.45rem;margin:.1em 0 .5em;color:var(--ink)}
+  .step ul{margin:0;padding-left:1.1em;color:var(--ink-soft)}
+  .step ul li{margin:.28em 0}
+  .step ul li strong{color:var(--ink);font-weight:600}
+
+  /* ---------- QUOTES STRIP ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:30px}
+  .qcard{background:#fff;border-radius:14px;padding:28px;box-shadow:var(--shadow);
+     display:flex;flex-direction:column;gap:14px;border-top:3px solid var(--wine)}
+  .qcard .mark{font-family:"Fraunces",serif;font-size:2.4rem;line-height:0;color:var(--gold-soft);height:18px}
+  .qcard .q{font-family:"Fraunces",serif;font-size:1.28rem;line-height:1.32;font-weight:500;color:var(--ink)}
+  .qcard cite{margin-top:auto;font-style:normal;font-size:.85rem;color:var(--wine);font-weight:600;letter-spacing:.03em}
+
+  /* ---------- PRACTICE CARDS ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+  .card{background:var(--parchment);border:1px solid var(--line);border-radius:14px;padding:26px;
+     transition:.2s}
+  .band .card{background:#fff}
+  .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--gold-soft)}
+  .card .ico{color:var(--vigil);margin-bottom:12px}
+  .card h3{font-size:1.18rem;margin:0 0 .35em}
+  .card p{margin:0;color:var(--ink-soft);font-size:.98rem}
+
+  /* ---------- DOCS ---------- */
+  .docs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+  a.doc{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
+     background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;
+     text-decoration:none;color:var(--ink);transition:.2s}
+  a.doc:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-1px)}
+  a.doc .badge{width:46px;height:46px;border-radius:10px;background:var(--parchment-2);
+     display:grid;place-items:center;color:var(--wine);flex:none}
+  a.doc .dt{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:1.1rem;line-height:1.2}
+  a.doc .dd{display:block;font-size:.86rem;color:var(--ink-soft);margin-top:4px}
+  a.doc .arrow{color:var(--gold);font-size:1.2rem;transition:.2s}
+  a.doc:hover .arrow{transform:translate(3px,-3px)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#EADFce;padding:54px 0 40px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+  footer h3{color:#fff;font-size:1.5rem;margin:0 0 8px}
+  footer p{margin:0;color:#C9BBA8;max-width:48ch;font-size:.95rem}
+  footer .small{font-size:.8rem;color:#9d8f7e;margin-top:18px;max-width:60ch}
+  footer a{color:var(--gold-soft)}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:860px){
+    .hero-inner{grid-template-columns:1fr;padding-top:46px;gap:20px}
+    .hero-art{grid-row:1;max-width:240px}
+    .intro-grid{grid-template-columns:1fr;gap:28px}
+    .quotes{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .docs{grid-template-columns:1fr}
+    section{padding:54px 0}
+    .step{grid-template-columns:60px 1fr;gap:16px}
+    .step .glyph{width:54px;height:54px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="reveal in">
+      <span class="eyebrow">Encontro de formação &middot; Pais da catequese</span>
+      <h1>A Igreja <span class="em">Doméstica</span></h1>
+      <p class="sub">A família é a primeira igreja. A Missa é o seu coração.</p>
+      <p class="lead">Material para aprofundar, no seu tempo, o que conversamos no encontro: a fé que nasce dentro de casa e se encontra com Cristo no altar. Sem pressa &mdash; um trecho de cada vez.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#caminho">Percorrer o caminho</a>
+        <a class="btn btn-ghost" href="#documentos">Ir aos documentos</a>
+      </div>
+    </div>
+    <div class="hero-art reveal in" aria-hidden="true">
+      <!-- casa que se torna igreja, sob um arco -->
+      <svg viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#F4ECDD"/>
+          </linearGradient>
+        </defs>
+        <!-- arco -->
+        <path d="M40 300 V150 a110 110 0 0 1 220 0 V300" fill="url(#g1)" stroke="#B6892F" stroke-width="2.5"/>
+        <path d="M40 300 V150 a110 110 0 0 1 220 0 V300" fill="none" stroke="#22425C" stroke-width="1" opacity=".25"/>
+        <!-- piso -->
+        <line x1="22" y1="300" x2="278" y2="300" stroke="#241C16" stroke-width="2.5"/>
+        <!-- casa dentro -->
+        <g stroke="#6E1F2A" stroke-width="2.5" stroke-linejoin="round" fill="#fff">
+          <path d="M104 300 V210 l46-38 46 38 V300 Z"/>
+          <path d="M150 172 l-52 43" fill="none"/>
+          <path d="M150 172 l52 43" fill="none"/>
+        </g>
+        <!-- porta + janela -->
+        <path d="M138 300 v-44 a12 12 0 0 1 24 0 V300" fill="#F4ECDD" stroke="#6E1F2A" stroke-width="2"/>
+        <!-- cruz no topo da casa -->
+        <g stroke="#B6892F" stroke-width="3" stroke-linecap="round">
+          <line x1="150" y1="150" x2="150" y2="170"/>
+          <line x1="142" y1="158" x2="158" y2="158"/>
+        </g>
+        <!-- velas / luz -->
+        <circle cx="80" cy="250" r="3" fill="#B6892F"/>
+        <circle cx="220" cy="250" r="3" fill="#B6892F"/>
+        <path d="M80 247 q0 -10 0 -16" stroke="#D8B873" stroke-width="2" stroke-linecap="round"/>
+        <path d="M220 247 q0 -10 0 -16" stroke="#D8B873" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ============ O QUE É ============ -->
+<section id="oque">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O ponto de partida</span>
+      <h2>O que é a igreja doméstica</h2>
+      <hr class="rule">
+    </div>
+    <div class="intro-grid">
+      <div class="reveal">
+        <p>A expressão vem de uma realidade antiga. Antes de existirem templos cristãos, as primeiras comunidades se reuniam nas casas &mdash; o Novo Testamento fala expressamente das &ldquo;igrejas que se reúnem nas casas&rdquo;. A família batizada não é apenas um grupo unido por laços de sangue: é a menor célula viva da Igreja, onde a fé é vista, ouvida e aprendida pela primeira vez.</p>
+        <p>É por isso que a catequese caminha <em>ao lado</em> dos pais, e não no lugar deles. Uma hora por semana na paróquia não sustenta sozinha a fé de uma criança. O que a sustenta é o que ela respira em casa: a oração antes de dormir, a graça à mesa, o exemplo de quem ela ama. A catequese rega; quem planta são vocês.</p>
+        <p>Este material reúne o essencial do que conversamos e aponta, ao final, para os documentos oficiais da Igreja, caso queira ir mais fundo.</p>
+      </div>
+      <blockquote class="pull reveal">
+        <p class="q">A família é, por assim dizer, a Igreja doméstica.</p>
+        <cite>Concílio Vaticano II — Lumen Gentium, n. 11</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAMINHO / NAVE ============ -->
+<section id="caminho" class="band nave">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A signatura do encontro</span>
+      <h2>Da casa ao altar</h2>
+      <p>A fé tem um ritmo semanal. Ela é cultivada em casa, dia após dia, e encontra seu ponto mais alto na Missa de domingo &mdash; de onde volta renovada para o lar. Casa e altar não são dois mundos: são os dois polos de um só caminho.</p>
+      <hr class="rule">
+    </div>
+
+    <div class="nave-track">
+      <div class="step reveal">
+        <div class="node">
+          <div class="glyph" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 30V15L17 5l12 10v15z"/><path d="M14 30v-8h6v8"/></svg>
+          </div>
+          <span class="num">I</span>
+        </div>
+        <div>
+          <h3>A casa, primeira escola da fé</h3>
+          <ul>
+            <li><strong>Oração em família</strong> como hábito, não como evento raro.</li>
+            <li><strong>Gestos simples:</strong> a bênção nos filhos, as graças antes das refeições, o sinal da cruz.</li>
+            <li>As crianças <strong>aprendem pelo exemplo</strong> muito mais do que pelo discurso.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="node">
+          <div class="glyph" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6h12l-2 7a4 4 0 0 1-8 0z"/><path d="M17 20v6"/><path d="M11 29h12"/></svg>
+          </div>
+          <span class="num">II</span>
+        </div>
+        <div>
+          <h3>A Missa, fonte e cume</h3>
+          <ul>
+            <li>A Missa é <strong>encontro real com Cristo</strong> na Eucaristia &mdash; não uma regra a cumprir.</li>
+            <li>Não é peso, é <strong>alimento:</strong> a fonte de onde a vida cristã brota e o cume para onde caminha.</li>
+            <li>O domingo é a <strong>Páscoa da semana,</strong> o encontro de toda a comunidade.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="node">
+          <div class="glyph" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="9" r="3"/><circle cx="23" cy="9" r="3"/><path d="M5 27v-4a6 6 0 0 1 12 0"/><path d="M17 27v-4a6 6 0 0 1 12 0"/></svg>
+          </div>
+          <span class="num">III</span>
+        </div>
+        <div>
+          <h3>Levar a família à Missa</h3>
+          <ul>
+            <li><strong>Preparar antes</strong> e comentar depois: o que ouvimos, o que tocou a gente.</li>
+            <li>Acolher com paciência a <strong>inquietação das crianças</strong> &mdash; estão aprendendo a estar diante de Deus.</li>
+            <li><strong>Ir juntos, com constância:</strong> a presença repetida ensina mais que mil explicações.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="node">
+          <div class="glyph" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17a11 11 0 0 1 22 0"/><path d="M17 6V3"/><path d="M28 28H6"/><path d="M17 28v-7"/></svg>
+          </div>
+          <span class="num">IV</span>
+        </div>
+        <div>
+          <h3>De volta para casa</h3>
+          <ul>
+            <li>A graça recebida no altar <strong>volta com a família</strong> para a rotina da semana.</li>
+            <li>O lar reza, perdoa e serve com a força que recebeu &mdash; e o <strong>ciclo recomeça.</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CITAÇÕES ============ -->
+<section id="citacoes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Para guardar no coração</span>
+      <h2>Frases que iluminam o caminho</h2>
+      <hr class="rule">
+    </div>
+    <div class="quotes">
+      <figure class="qcard reveal">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="q">A Eucaristia é fonte e cume de toda a vida cristã.</blockquote>
+        <cite>Catecismo da Igreja Católica, n. 1324</cite>
+      </figure>
+      <figure class="qcard reveal">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="q">O lar é a primeira escola da vida cristã.</blockquote>
+        <cite>Catecismo da Igreja Católica, n. 1657</cite>
+      </figure>
+      <figure class="qcard reveal">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="q">A alegria do amor vivido nas famílias é também o júbilo da Igreja.</blockquote>
+        <cite>Papa Francisco — Amoris Laetitia, n. 1</cite>
+      </figure>
+      <figure class="qcard reveal">
+        <div class="mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="q">O futuro da humanidade passa pela família.</blockquote>
+        <cite>São João Paulo II — Familiaris Consortio, n. 86</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRÁTICAS ============ -->
+<section id="praticas" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Do papel para a vida</span>
+      <h2>Para começar já, esta semana</h2>
+      <p>Nada de grandes projetos. A fé em casa se constrói com pequenos passos repetidos. Escolha um e comece hoje.</p>
+      <hr class="rule">
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 4v22"/><path d="M9 10h12"/></svg></div>
+        <h3>Uma oração fixa por dia</h3>
+        <p>Antes de dormir ou de sair de casa, uma oração curta juntos. O importante é a constância, não o tamanho.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 14h20"/><path d="M8 14v8h14v-8"/><path d="M11 14V8h8v6"/></svg></div>
+        <h3>Graças à mesa</h3>
+        <p>Agradecer pela comida antes de comer ensina, sem aula nenhuma, que tudo é dom recebido.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6c4 4 4 14 0 18"/><path d="M15 6c-4 4-4 14 0 18"/><path d="M15 4v3"/></svg></div>
+        <h3>A bênção nos filhos</h3>
+        <p>Um sinal da cruz na testa da criança ao se despedir. Um gesto pequeno que ela carrega a vida inteira.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="15" r="11"/><path d="M15 9v6l4 3"/></svg></div>
+        <h3>Preparar o domingo</h3>
+        <p>No sábado, comente em poucas palavras o que será celebrado. Chegar sabendo muda o jeito de participar.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h18v14H6z"/><path d="M6 7l9 7 9-7"/></svg></div>
+        <h3>Conversar depois da Missa</h3>
+        <p>No caminho de volta, uma pergunta simples: &ldquo;o que você ouviu hoje?&rdquo;. A fé cresce quando é falada.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14a4 4 0 0 1 4 4v14"/><path d="M5 6v14a4 4 0 0 0 4 4h14"/></svg></div>
+        <h3>Ler um trecho juntos</h3>
+        <p>Um versículo do Evangelho do domingo, lido em voz alta em família. A Palavra também é alimento do lar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOCUMENTOS ============ -->
+<section id="documentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">As fontes originais</span>
+      <h2>Para se aprofundar</h2>
+      <p>Tudo o que foi dito tem raiz nestes documentos da Igreja. Todos os links abaixo abrem o texto oficial, em português, no site do Vaticano.</p>
+      <hr class="rule">
+    </div>
+    <div class="docs">
+      <a class="doc reveal" href="https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-9-6-9-12a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 6-5 8-9 12z"/></svg></span>
+        <span><span class="dt">Amoris Laetitia</span><span class="dd">Papa Francisco, 2016 — A alegria do amor na família. O cap. 7 trata da educação dos filhos na fé.</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="doc reveal" href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_po.html" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l9-7 9 7v10"/><path d="M9 21v-6h6v6"/></svg></span>
+        <span><span class="dt">Lumen Gentium</span><span class="dd">Concílio Vaticano II — Onde a família é chamada &ldquo;Igreja doméstica&rdquo; (n. 11).</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="doc reveal" href="https://www.vatican.va/archive/cathechism_po/index_new/p2s2cap1_1210-1419_po.html" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6h7l-1 5a3 3 0 0 1-5 0z" transform="translate(-2 0)"/><path d="M12 16v4"/><path d="M8 22h8"/></svg></span>
+        <span><span class="dt">Catecismo — A Eucaristia</span><span class="dd">Parágrafos 1210–1419. O sentido da Missa, da presença real e da comunhão.</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="doc reveal" href="https://www.vatican.va/content/john-paul-ii/pt/apost_exhortations/documents/hf_jp-ii_exh_19811122_familiaris-consortio.html" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M4 20v-2a5 5 0 0 1 10 0v2"/><path d="M14 20v-1a4 4 0 0 1 6-3.4"/></svg></span>
+        <span><span class="dt">Familiaris Consortio</span><span class="dd">São João Paulo II, 1981 — A missão da família cristã no mundo de hoje.</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="doc reveal" href="https://www.vatican.va/content/john-paul-ii/pt/apost_letters/1998/documents/hf_jp-ii_apl_05071998_dies-domini.html" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+        <span><span class="dt">Dies Domini</span><span class="dd">São João Paulo II, 1998 — Sobre o sentido e a santificação do domingo.</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="doc reveal" href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/index_po.htm" target="_blank" rel="noopener">
+        <span class="badge" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h7M9 13h7M9 17h4"/></svg></span>
+        <span><span class="dt">Documentos do Vaticano II</span><span class="dd">Índice oficial — inclui a Sacrosanctum Concilium (liturgia) e demais textos conciliares.</span></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>Que a sua casa seja uma pequena igreja.</h3>
+      <p>Comece pequeno, comece hoje. A fé que vocês vivem em casa é a herança mais valiosa que deixarão aos seus filhos.</p>
+      <p class="small">Material de apoio do encontro de formação para os pais da catequese. As citações foram transcritas das fontes oficiais; ao citar publicamente, recomenda-se conferir a edição em uso na paróquia. Links externos abrem o site do Vaticano (vatican.va).</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // revelar elementos ao rolar
+  (function(){
+    var els = document.querySelectorAll('.reveal:not(.in)');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
